@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Element 示例</title>
+	
+	
+	<!-- Element UI CSS -->
+	<link href="css/element-ui.min.css" rel="stylesheet">
+	
+	<!-- Vue JS -->
+	<script src="js/vue.js"></script>
+	<!-- Element UI JS -->
+	<script src="js/element-ui.min.js"></script>
+	
+</head>
+<body>
+
+	<div id="app">
+		<el-button @click="visible = true"> Button </el-button>
+		<el-dialog :visible.sync="visible" title="Hello world">
+			<p>Try Element</p>
+		</el-dialog>
+	</div>
+
+
+	
+	<script type="text/javascript">
+		new Vue({
+			el: '#app',
+			data: function() {
+				return { visible: false }
+			}
+		})
+	</script>
+
+</body>
+</html>
