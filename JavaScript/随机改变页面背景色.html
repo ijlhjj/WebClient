@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>随机改变页面背景色</title>
+</head>
+<body>
+
+
+
+	<script type="text/javascript">
+		function changeBg() {
+			var bgColor = "";
+			for( var i=0; i<6; i++) {
+				bgColor += "" + Math.round(Math.random() * 9);
+			}
+			document.body.style.backgroundColor = "#" + bgColor;
+		}
+		
+		document.onclick = changeBg;
+	</script>
+
+</body>
+</html>
