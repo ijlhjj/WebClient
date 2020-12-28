@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图像相关元素</title>
+</head>
+<body>
+
+	<!-- 默认图像元素 --> 
+	<img src="../images/pediy.gif" alt="看雪论坛LOGO"><br>
+	<!-- 指定图像的宽、高 --> 
+	<img src="../images/pediy.gif" width="400" height="300" alt="看雪论坛LOGO"><br>
+	<!-- 指定图像映射 --> 
+	<img src="../images/pediy.gif" width="240" height="90" alt="看雪论坛LOGO" usemap="nav"><br>
+	<!-- 图像映射不规则图形 -->
+	<map name="nav" id="nav">
+	  <area shape="circle" coords="57,55,25" href="http://www.baidu.com/" alt="百度" />
+	  <area shape="poly" coords="100, 20, 150, 42, 190, 70, 120, 85" href="http://www.163.com/" alt="网易" />
+	</map>
+	<!-- 指定图像映射 --> 
+	<img src="../images/pediy.gif" width="240" height="90" alt="看雪论坛LOGO" usemap="nav2"> 
+	<!-- 矩形图像映射，进行导航 -->
+	<map name="nav2" id="nav2">
+	  <area shape="rect" coords="0,0,50,90" href="http://www.baidu.com/" alt="百度" />
+	  <area shape="rect" coords="190,0,240,90" href="http://www.163.com/" alt="网易" />
+	</map>
+
+</body>
+</html>

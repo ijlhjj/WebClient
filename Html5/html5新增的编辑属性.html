@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>html5新增的编辑属性</title>
+</head>
+<body ondblclick="document.designMode='on';"> 
+<!-- designMode相当于全局的contenteditable属性，designMode='on'使页面上所有支持contenteditable属性的元素都变成可编辑状态 -->
+
+	<div contenteditable="true" style="width:500px; border:1px solid black;">
+		疯狂Java讲义
+        <table style="width:420px; border-collapse:collapse;" border="1">
+            <tr>
+                <td>疯狂Java讲义</td>
+                <td>疯狂Androoid讲义</td>
+            </tr>
+            <tr>
+                <td>轻量级Java EE企业应用实战</td>
+                <td>经典Java EE企业应用实战</td>
+            </tr>
+        </table>
+    </div>
+	
+    <hr />
+	
+    <table id="target" style="width:420px; border-collapse:collapse;" border="1">
+        <tr>
+            <td>Java</td>
+            <td>Ruby</td>
+        </tr>
+        <tr>
+            <td>C/C++</td>
+            <td>Python</td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>文件读取进度条</title>
+</head>
+<body>
+
+    <label>
+        浏览文件：
+        <input id="file" type="file">
+    </label>
+    <br>
+    <progress id="pro" value="0"></progress>
+    <br>
+    <br>
+    <input type="button" value="二进制方式读取" onclick="readBinary()">
+	
+    <script type="text/livescript">
+        var reader = null;
+		
+        if (FileReader) {
+            reader = new FileReader();
+        } else {
+            alert("浏览器暂不支持FileReader");
+        }
+
+        var pro = document.getElementById("pro");
+        var result = document.getElementById("result");
+
+        reader.onprogress = function(evt) {
+            pro.value = evt.loaded;
+        }
+
+        var readBinary = function() {
+            var file = document.getElementById("file").files[0];
+            pro.max = file.size;
+            reader.readAsBinaryString(file);
+        }
+		
+    </script>
+	
+</body>
+</html>

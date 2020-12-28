@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>可自由拖动的 Div</title>
+	
+	<style type="text/css">
+		div {
+			width: 80px; 
+			height: 80px; 
+			border: 1px solid black; 
+			background-color: #bbb;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="source" draggable="true">疯狂软件教育</div>
+	
+	<script type="text/javascript">
+		var source = document.getElementById("source");
+		
+		source.ondragstart = function(evt){
+			evt.dataTransfer.setData("text/plain", "www.fkjava.org");
+		}
+		
+		document.ondragover = function(evt){
+			return false;
+		}
+		
+		document.ondrop = function(evt){
+			source.style.position = "absolute";
+			source.style.left = evt.pageX + "px";
+			source.style.top = evt.pageY + "px";
+			return false;
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Html5 为表单控件新增的属性</title>
+</head>
+<body>
+
+    <form id="login" method="post">
+        <label>
+            用户名：
+            <!--autofocus属性自动获得焦点，一个页面只能有一个控件设置该属性-->
+            <!--placeholder属性设置未输入前的提示信息，输入信息后提示自动消失-->
+            <input type="text" name="name" autofocus placeholder="请输入用户名" />
+        </label>
+        <br />
+        <label>
+            密&nbsp;&nbsp;码：
+            <input type="password" name="pass" placeholder="请输入密码" />
+        </label>
+        <br />
+        <!--formaction属性指定以下两个按钮提交到不同的URL-->
+        <input type="submit" value="注册" formaction="regist" />
+        <input type="submit" value="修改" formaction="login" />
+    </form>
+    <br>
+    <br>
+    <label>
+        备注信息：<br>
+        <!--form属性指定textarea控件属于login表单-->
+        <textarea name="desc" form="login"></textarea>
+    </label>
+    <br>
+    <br>
+    <label>
+        所属国家：
+        <!--list属性指定关联列表-->
+        <input type="text" name="country" list="countrylist">
+    </label>
+    <datalist id="countrylist">
+        <!--浏览器对option的处理可能会不同，有的显示value属性值，有的显示内部文本，所以尽量设置为相同值-->
+        <option value="中国">中国</option>
+        <option value="美国">美国</option>
+        <option value="俄罗斯">俄罗斯</option>
+    </datalist>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>colgroup元素用法</title>
+</head>
+<body>
+
+	 <table style="background-color:black;border-spacing:1px;">
+        <caption><b>疯狂Java体系图书</b></caption>
+        <colgroup style="background-color:white;">
+            <col style="width:280px;" />
+            <col span="2" style="width:100px;" />
+        </colgroup>
+        <thead>
+            <tr>
+                <th>书名</th>
+                <th>作者</th>
+                <th>价格</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td colspan="3" style="text-align:right">现总计：2本图书</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>疯狂Java讲义</td>
+                <td>李刚</td>
+                <td>109</td>
+            </tr>
+            <tr>
+                <td>轻量级Java EE企业应用实战</td>
+                <td>李刚</td>
+                <td>89</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
