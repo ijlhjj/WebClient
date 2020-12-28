@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="../js/echarts.min.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 600px;height:400px;"></div>
+	
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('main'));
+
+        // 指定图表的配置项和数据
+        option = {
+			xAxis: {
+				type: 'value'
+			},
+			yAxis: {
+				type: 'value'
+			},
+			dataZoom: [
+				{
+					type: 'slider',
+					xAxisIndex: 0,
+					start: 10,
+					end: 60
+				},
+				{
+					type: 'inside',
+					xAxisIndex: 0,
+					start: 10,
+					end: 60
+				},
+				{
+					type: 'slider',
+					yAxisIndex: 0,
+					start: 30,
+					end: 80
+				},
+				{
+					type: 'inside',
+					yAxisIndex: 0,
+					start: 30,
+					end: 80
+				}
+			],
+			series: [
+				{
+					name: 'scatter',
+					type: 'scatter',
+					itemStyle: {
+						normal: {
+							opacity: 0.8
+						}
+					},
+					symbolSize: function (val) {
+						return val[2] * 40;
+					},
+					data: [["14.616","7.241","0.896"],["3.958","5.701","0.955"],["2.768","8.971","0.669"],["9.051","9.710","0.171"],["14.046","4.182","0.536"],["12.295","1.429","0.962"],["4.417","8.167","0.113"],["0.492","4.771","0.785"],["7.632","2.605","0.645"],["14.242","5.042","0.368"]]
+				}
+			]
+		};
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    </script>
+</body>
+</html>

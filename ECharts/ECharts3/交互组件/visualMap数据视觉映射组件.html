@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <!-- 引入 echarts.js -->
+    <script src="../js/echarts.min.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="beijing.js"></script>
+</head>
+<body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="height:700px;"></div>
+	
+    <script type="text/javascript">
+	
+        var myChart = echarts.init(document.getElementById('main'));
+
+		var option = {
+			title: {
+				text: '北京人口密度'
+			},
+			tooltip: {
+				trigger: 'item',
+				formatter: '{b}<br/>{c} 人'
+			},
+			toolbox: {
+				show: true,
+				orient: 'vertical',
+				left: 'right',
+				top: 'center',
+				feature: {
+					dataView: {readOnly: false},
+					restore: {},
+					saveAsImage: {}
+				}
+			},
+			visualMap: {
+				min: 200000,
+				max: 2000000,
+				text:['High','Low'],
+				realtime: false,
+				calculable: true,
+				inRange: {
+					color: ['lightskyblue','yellow', 'orangered']
+				}
+			},
+			series: [
+				{
+					name: '北京人口密度',
+					type: 'map',
+					mapType: '北京', // 自定义扩展图表类型
+					itemStyle:{
+						normal:{label:{show:true}},
+						emphasis:{label:{show:true}}
+					},
+					data:[
+						{name: '东城区', value: 978311},
+						{name: '西城区', value: 1468579},
+						{name: '朝阳区', value: 2126415},
+						{name: '海淀区', value: 2401809},
+						{name: '丰台区', value: 1158928},
+						{name: '石景山区', value: 388277},
+						{name: '大兴区', value: 675302},
+						{name: '通州区', value: 755452},
+						{name: '顺义区', value: 630704},
+						{name: '昌平区', value: 616138},
+						{name: '房山区', value: 816488},
+						{name: '门头沟区', value: 251782},
+						{name: '怀柔区', value: 283418},
+						{name: '平谷区', value: 402737},
+						{name: '密云县', value: 436808},
+						{name: '延庆县', value: 284956}				
+					]
+				}
+			]
+		};
+	
+		// 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+		
+    </script>
+</body>
+</html>
