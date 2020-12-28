@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>列表相关属性</title>
+	
+	<style type="text/css">
+		li {
+			background-color: #aaa;
+		}
+		
+		div > div {
+			background-color: #aaa;
+			display:list-item;
+			list-style-image:url(images/list-item.gif);
+			list-style-position:inside;
+		}
+	</style>
+	
+</head>
+<body>
+
+	使用图片作为列表项标记
+	<div>
+		<div>疯狂Java讲义</div>
+		<div>轻量级Java EE企业应用实战</div>
+		<div>疯狂Android讲义</div>
+		<div>经典Java EE企业应用实战</div>
+	</div>
+
+	使用图片作为列表项标记
+	<ul style="list-style-image:url(images/list-item.gif);">
+		<li>疯狂Java讲义</li>
+		<li>轻量级Java EE企业应用实战</li>
+		<li>疯狂Android讲义</li>
+		<li>经典Java EE企业应用实战</li>
+	</ul>
+	
+	使用大写罗马字母作为列表项标记
+	<ol style="list-style-type:upper-roman;">
+		<li>疯狂Java讲义</li>
+		<li>轻量级Java EE企业应用实战</li>
+		<li>疯狂Android讲义</li>
+		<li>经典Java EE企业应用实战</li>
+	</ol>
+	
+	使用表意数组作为列表项标记，并将列表标记放在列表元素内
+	<ol style="list-style-type:cjk-ideographic; list-style-position:inside;">
+		<li>疯狂Java讲义</li>
+		<li>轻量级Java EE企业应用实战</li>
+		<li>疯狂Android讲义</li>
+		<li>经典Java EE企业应用实战</li>
+	</ol>
+
+</body>
+</html>
